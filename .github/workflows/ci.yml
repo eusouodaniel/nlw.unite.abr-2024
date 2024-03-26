@@ -37,7 +37,7 @@ jobs:
     
     - name: Update image tag
       uses: fjogeleit/yaml-update-action@main
-      with: 
+      with:
         branch: main
         valueFile: 'k8s/values.yaml'
         propertyPath: 'image.tag'
