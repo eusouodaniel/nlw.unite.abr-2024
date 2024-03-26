@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: passin-deployment
+  labels:
+    app: passin
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: passin
+  template:
+    metadata:
+      labels:
+        app: passin
+    spec:
+      containers:
+      - name: passin
+        image: danielrodriguess/nlw.service.passin:2359810
+        env:
+        - name: DATABASE_URL
+          value: postgresql://doadmin:AVNS_x6uF91Kg6Inx3xCidJi@nlw-unite-do-user-13225624-0.c.db.ondigitalocean.com:25060/nlw-unite?sslmode=require
+        - name: API_BASE_URL
+          value: http://localhost
+        ports:
+        - containerPort: 3333
+        resources:
+          requests:
+            cpu: 200m
+            memory: 256Mi
+          limits:
+            cpu: 400m
+            memory: 512Mi
