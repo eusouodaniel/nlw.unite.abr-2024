@@ -2,7 +2,7 @@ replicaCount: 3
 image:
   repository: danielrodriguess/nlw.service.passin
   pullPolicy: Always
-  tag: f3e8076
+  tag: 5eb7b13
 imagePullSecrets: []
 nameOverride: ''
 fullnameOverride: ''
